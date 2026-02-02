@@ -156,7 +156,7 @@ We acknowledge the high-quality sequencing data provided by [CycloneSEQ](https:/
 If you use this work in your research, please cite the following paper:
 
 ```bibtex
-@article{gengram2026,
+@article{gengram,
   title={Beyond Conditional Computation: Retrieval-Augmented Genomic Foundation Models with Gengram},
   author={Genos Team and Xu, Huinan and Feng, Xuyang and Chen, Junhong and Liu Junchen and Deng, Kaiwen and Ding, Kai and Long, Shengning and Shuai, Jiaxue and Li, Zhaorong and Liu, Shiping and Xue, Guirong and Xiao, Zhan},
   journal={arXiv preprint arXiv:2601.22203},
